@@ -1,0 +1,16 @@
+[
+  {
+    "modid": "${modId}",
+    "name": "${modName}",
+    "description": "A taller Overworld: y -64 to 319, as in later versions of Minecraft. Needed on both the client and the server.",
+    "version": "${modVersion}",
+    "mcversion": "${minecraftVersion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": ["AsgerJon"],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]

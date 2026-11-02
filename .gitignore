@@ -22,3 +22,17 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+# Gradle and RetroFuturaGradle (the wrapper's jar belongs in git)
+!gradle/wrapper/gradle-wrapper.jar
+.gradle/
+/build/
+/run/
+/out/
+
+# IDEs
+.idea/
+*.iml
+
+# unitTAS's results, a folder a run (unittas.sh)
+/unittas-results/
