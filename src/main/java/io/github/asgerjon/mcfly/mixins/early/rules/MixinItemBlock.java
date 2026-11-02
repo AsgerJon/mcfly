@@ -10,8 +10,8 @@ import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
 
 /**
- * Any block can be placed in the Overworld's top layer, 319 (§4 answer 3). 1.7.10 refuses a solid block at y 255; the
- * Nether and the End keep that.
+ * Any block can be placed in the Overworld's top layer, 319 (spec §11 answer 3). 1.7.10 refuses a solid block at y 255;
+ * the Nether and the End keep that.
  */
 @Mixin(ItemBlock.class)
 public abstract class MixinItemBlock {

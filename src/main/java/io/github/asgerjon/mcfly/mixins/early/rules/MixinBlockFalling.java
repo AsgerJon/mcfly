@@ -8,8 +8,8 @@ import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
 
 /**
- * A falling block falls wherever the space below is free, at any y of the range (§4 answer 2; 1.7.10: only at y >= 0),
- * so at the floor it falls out of the world. Generation's instant fall goes down to the floor (1.7.10: to 0).
+ * A falling block falls wherever the space below is free, at any y of the range (spec §11 answer 2; 1.7.10: only at y
+ * >= 0), so at the floor it falls out of the world. Generation's instant fall goes down to the floor (1.7.10: to 0).
  */
 @Mixin(BlockFalling.class)
 public abstract class MixinBlockFalling {

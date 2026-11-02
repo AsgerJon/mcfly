@@ -24,8 +24,7 @@ import java.util.List;
  * The renderer draws the world's whole column (spec §9): a column of render sections is as tall as the world's range
  * (24 in the Overworld, 1.7.10's 16 elsewhere) and starts at its floor. The display lists and occlusion queries are
  * made once, when the game starts, so for the tallest range. For speed, a mark reaches only the section at the marked
- * place (decision 37) and a section's first build waits for the chunks around its own (decision 38). Counts checked
- * against 1.7.10's bytecode.
+ * place, and a section's first build waits for the chunks around its own. Counts checked against 1.7.10's bytecode.
  */
 @Mixin(RenderGlobal.class)
 public abstract class MixinRenderGlobal {
@@ -36,11 +35,11 @@ public abstract class MixinRenderGlobal {
 	@Shadow
 	private List<Object> worldRenderersToUpdate;
 
-	/** The block range `markBlocksForUpdate` was given, while it runs (decision 37). */
+	/** The block range `markBlocksForUpdate` was given, while it runs. */
 	@Unique
 	private int mcfly$markMinX, mcfly$markMinY, mcfly$markMinZ, mcfly$markMaxX, mcfly$markMaxY, mcfly$markMaxZ;
 
-	/** The queued sections the current `updateRenderers` passed by because their first build waits (decision 38). */
+	/** The queued sections the current `updateRenderers` passed by because their first build waits. */
 	@Unique
 	private int mcfly$waiting;
 
@@ -136,8 +135,8 @@ public abstract class MixinRenderGlobal {
 	}
 
 	/**
-	 * Into the queue of render sections to rebuild only when there is something to build (`MixinWorldRenderer`,
-	 * decision 36). The move in `markRenderersForNewPosition` already queues only what is still marked.
+	 * Into the queue of render sections to rebuild only when there is something to build (`MixinWorldRenderer`). The
+	 * move in `markRenderersForNewPosition` already queues only what is still marked.
 	 */
 	@Redirect(method = {"loadRenderers", "markBlocksForUpdate"},
 		at = @At(value = "INVOKE", target = "Ljava/util/List;add(Ljava/lang/Object;)Z", remap = false), require = 2, allow = 2)

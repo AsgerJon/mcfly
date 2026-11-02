@@ -9,9 +9,9 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 /**
  * A chunk going (`doPreChunk` marks only on an unload) redraws its own column, floor..top, so its render sections stop
- * drawing at once; not the columns around it (decision 39). 1.7.10 marks 0..256, and `RenderGlobal`'s extra block on
- * each side makes that the 8 columns around too, to draw their faces toward the gone chunk: back faces, never seen.
- * So the range is taken in by a block on each side, and that extra block makes it the gone column exactly.
+ * drawing at once; not the columns around it. 1.7.10 marks 0..256, and `RenderGlobal`'s extra block on each side makes
+ * that the 8 columns around too, to draw their faces toward the gone chunk: back faces, never seen. So the range is
+ * taken in by a block on each side, and that extra block makes it the gone column exactly.
  */
 @Mixin(WorldClient.class)
 public abstract class MixinWorldClientRedraw {

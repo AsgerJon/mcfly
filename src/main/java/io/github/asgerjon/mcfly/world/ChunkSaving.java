@@ -10,10 +10,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- * The tall parts of a saved chunk (PLAN-mcfly.md §1 "Saving"), beside what 1.7.10 writes itself. `Sections` keeps 0..15
- * and `HeightMap` what an unmodded 1.7.10 works out from y 0..255, so that game still reads the chunk (spec §0.4); the
- * other sections go in `TallSections` and the real height map in `TallHeightMap`. A chunk without `TallHeightMap` was
- * saved by plain 1.7.10. The tag names outlive the mod id: chunks saved before the fold into EFR load after it.
+ * The tall parts of a saved chunk (spec §6), beside what 1.7.10 writes itself. `Sections` keeps 0..15 and `HeightMap`
+ * what an unmodded 1.7.10 works out from y 0..255, so that game still reads the chunk (spec §0.4); the other sections
+ * go in `TallSections` and the real height map in `TallHeightMap`. A chunk without `TallHeightMap` was saved by plain
+ * 1.7.10. The tag names outlive the mod id: chunks saved before the fold into EFR load after it.
  */
 public final class ChunkSaving {
 

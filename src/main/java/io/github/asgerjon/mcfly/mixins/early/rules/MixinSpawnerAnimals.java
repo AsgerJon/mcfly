@@ -11,8 +11,9 @@ import org.spongepowered.asm.mixin.Overwrite;
 
 /**
  * Where natural spawning tries in a chunk: a random column, and a y from the bottom of its lowest block section up to
- * the top of its highest (decision 15: 1.7.10 tries from 0; later versions from the floor). A chunk with nothing below 0
- * keeps 1.7.10's spawn rates. One with no sections at all tries 0..14, as 1.7.10 does.
+ * the top of its highest. 1.7.10 tries from 0; later versions from the floor, which spreads the same tries over 64 more
+ * empty blocks. A chunk with nothing below 0 keeps 1.7.10's spawn rates. One with no sections at all tries 0..14, as
+ * 1.7.10 does.
  */
 @Mixin(SpawnerAnimals.class)
 public abstract class MixinSpawnerAnimals {

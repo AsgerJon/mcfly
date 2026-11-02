@@ -27,7 +27,7 @@ final class TasSuites {
 	static {
 		// a few tests of the plain game, to see unitTAS work in a new mod
 		SUITES.put("smoke", Arrays.asList(SmokeTests.class));
-		// McFly, by stage (PLAN-mcfly.md): (a) storage, world access and saving
+		// McFly, by stage: (a) storage, world access and saving
 		SUITES.put("storage", Arrays.asList(StorageTests.class, SaveTests.class));
 		// (b) light
 		SUITES.put("light", Arrays.asList(LightTests.class));

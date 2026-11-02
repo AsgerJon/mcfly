@@ -7,8 +7,8 @@ import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
 
 /**
- * A falling block becomes its item after 100 ticks of falling at or below the floor or above the top (§4 answer 2;
- * 1.7.10: below y 1 or above 256), or after 600 anywhere, as in 1.7.10. Its `j < 1` is the method's seventh 1, by
+ * A falling block becomes its item after 100 ticks of falling at or below the floor or above the top (spec §11 answer
+ * 2; 1.7.10: below y 1 or above 256), or after 600 anywhere, as in 1.7.10. Its `j < 1` is the method's seventh 1, by
  * 1.7.10's bytecode.
  */
 @Mixin(EntityFallingBlock.class)

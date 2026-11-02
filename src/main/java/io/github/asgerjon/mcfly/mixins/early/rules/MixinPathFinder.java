@@ -15,8 +15,8 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 /**
  * A walking mob's path down a drop goes down to the floor, and is refused when it gets there without ground: no path
- * into the void (§4 answer 4). 1.7.10 stops looking at 0, so below 0 it takes any drop as ground. Its `y > 0` tests are
- * the second and third zero tests of `getSafePoint` (the first is the step height), by 1.7.10's bytecode.
+ * into the void (spec §11 answer 4). 1.7.10 stops looking at 0, so below 0 it takes any drop as ground. Its `y > 0`
+ * tests are the second and third zero tests of `getSafePoint` (the first is the step height), by 1.7.10's bytecode.
  */
 @Mixin(PathFinder.class)
 public abstract class MixinPathFinder {

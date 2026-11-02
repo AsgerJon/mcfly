@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 /**
  * The horizon (where the sky's dark lower half begins) of a flat tall world is its floor, as a flat 1.7.10 world's is
- * its 0 (§4 answer 8). A normal world's 63 stays.
+ * its 0 (spec §11 answer 8). A normal world's 63 stays.
  */
 @Mixin(WorldType.class)
 public abstract class MixinWorldTypeHorizon {

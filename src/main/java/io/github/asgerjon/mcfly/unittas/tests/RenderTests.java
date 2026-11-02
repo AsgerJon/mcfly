@@ -20,8 +20,8 @@ import java.util.concurrent.Callable;
 
 /**
  * Stage (e), suite `render`: the client draws the whole column, -64..319 (spec §9), and the sky and fog of the camera
- * near the floor (§4 answer 8): the horizon, the fog colour's darkening measured from the floor, no void particles; and
- * when a render section is rebuilt (decisions 37 to 39). The test world is flat; the tests that need a normal world's
+ * near the floor (spec §11 answer 8): the horizon, the fog colour's darkening measured from the floor, no void
+ * particles; and when a render section is rebuilt. The test world is flat; the tests that need a normal world's
  * darkening set the client's world type to default while they look. Each builds at its own x at z -80..-60, north of
  * spawn.
  */

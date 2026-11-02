@@ -34,14 +34,14 @@ import java.util.Locale;
 import java.util.Map;
 
 /**
- * Stage (e), suite `bench`: the renderer's cost, measured, not judged (PLAN-mcfly.md §2 (e)). Each test builds a scene of
- * towers (stone, glass, glowstone) every 48 blocks within 144 of its centre, flies the same 30 s path over it at
- * y 60 looking ahead and down, with the frame rate unlimited, and adds one line of numbers to `bench.txt` in the run's
- * results folder. The scenes: towers in 0..255 only, and the same towers also below 0 and above 255. The line also says
- * what the code doesn't decide but the numbers depend on: the window's size, how much of the flight it was in focus,
- * and the Java garbage collector's pauses. Then it flies the path again with 1.7.10's profiler on (the one behind
- * Shift+F3's pie chart) and writes the time each of its sections took to `profile.txt`: apart from the timed flight,
- * because the profiler's own work would change the times. Last, one rebuild's cost on its own, to `rebuild.txt`.
+ * Stage (e), suite `bench`: the renderer's cost, measured, not judged. Each test builds a scene of towers (stone,
+ * glass, glowstone) every 48 blocks within 144 of its centre, flies the same 30 s path over it at y 60 looking ahead
+ * and down, with the frame rate unlimited, and adds one line of numbers to `bench.txt` in the run's results folder. The
+ * scenes: towers in 0..255 only, and the same towers also below 0 and above 255. The line also says what the code
+ * doesn't decide but the numbers depend on: the window's size, how much of the flight it was in focus, and the Java
+ * garbage collector's pauses. Then it flies the path again with 1.7.10's profiler on (the one behind Shift+F3's pie
+ * chart) and writes the time each of its sections took to `profile.txt`: apart from the timed flight, because the
+ * profiler's own work would change the times. Last, one rebuild's cost on its own, to `rebuild.txt`.
  */
 public class RenderBench extends McFlyTestCase {
 

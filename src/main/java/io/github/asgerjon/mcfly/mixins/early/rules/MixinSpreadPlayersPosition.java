@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.Shadow;
 
 /**
  * Where `/spreadplayers` puts a player in a column, and whether the column is safe: searched from top + 1 down to the
- * floor for its highest block; no block means unsafe, as does a liquid (or fire, as 1.7.10 has it) (§4 answer 4).
+ * floor for its highest block; no block means unsafe, as does a liquid (or fire, as 1.7.10 has it) (spec §11 answer 4).
  * 1.7.10 searched from 256 down to 1 for the place, and for safety looked only at y 256, which is always air: every
  * column was safe. 1.7.10's range keeps all of that.
  */

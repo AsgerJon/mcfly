@@ -8,9 +8,9 @@ import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
 
 /**
- * A piston moves no block to or from outside floor..top, and its head needs room inside (§4 answer 1). 1.7.10 refuses
- * y <= 0, the floor layer itself; that becomes below the floor. The upper bound is `getHeight()`, one above the top
- * since (a).
+ * A piston moves no block to or from outside floor..top, and its head needs room inside (spec §11 answer 1). 1.7.10
+ * refuses y <= 0, the floor layer itself; that becomes below the floor. The upper bound is `getHeight()`, one above the
+ * top since (a).
  */
 @Mixin(BlockPistonBase.class)
 public abstract class MixinBlockPistonBase {

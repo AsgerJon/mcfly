@@ -26,7 +26,7 @@ public class McFlyEarlyMixins implements IFMLLoadingPlugin, IEarlyMixinLoader {
 
 		List<String> mixins = new ArrayList<>();
 
-		// (a) storage, world access and saving (PLAN-mcfly.md)
+		// (a) storage, world access and saving
 		mixins.add("storage.MixinWorld");
 		mixins.add("storage.MixinWorldProvider");
 		mixins.add("storage.MixinChunk");

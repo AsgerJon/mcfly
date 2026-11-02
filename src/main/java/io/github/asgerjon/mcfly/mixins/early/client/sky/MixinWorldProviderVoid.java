@@ -10,8 +10,8 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 /**
- * A tall world has no void particles (§4 answer 8). 1.7.10 shows them in a normal world near y 0, and the same answer
- * shortens the fog's distance there (`EntityRenderer.setupFog`); both end.
+ * A tall world has no void particles (spec §11 answer 8). 1.7.10 shows them in a normal world near y 0, and the same
+ * answer shortens the fog's distance there (`EntityRenderer.setupFog`); both end.
  */
 @Mixin(WorldProvider.class)
 public abstract class MixinWorldProviderVoid {

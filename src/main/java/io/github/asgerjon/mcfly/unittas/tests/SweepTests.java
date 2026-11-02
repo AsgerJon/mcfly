@@ -22,8 +22,8 @@ import java.util.Random;
 
 /**
  * Stage (d), suite `rules`: 1.7.10's other fixed bounds at 0 and 255/256, moved to the floor and the top as the other
- * side's answers say (PLAN-mcfly.md §2 (d) item 5, §4). Each test builds at its own place at z 120..150, south of spawn;
- * the portal at the top is made at x 400, z 400.
+ * side's answers say (spec §11). Each test builds at its own place at z 120..150, south of spawn; the portal at the top
+ * is made at x 400, z 400.
  */
 public class SweepTests extends McFlyTestCase {
 

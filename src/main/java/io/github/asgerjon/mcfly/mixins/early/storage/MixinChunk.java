@@ -24,11 +24,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.Arrays;
 
 /**
- * The column holds every section of its world's range (PLAN-mcfly.md §1 "Sections"). Sections 0..15 stay in 1.7.10's
- * `storageArrays`, so code walking `getBlockStorageArray()` sees y 0..255 as before; the light store's other sections
- * live in a second array. 1.7.10's `storageArrays[y >> 4]` reads go through the lookup by section number, and new
- * sections outside 0..15 are made before 1.7.10 would store them; y >> 4 and y & 15 are already right for negative y. The column scans whose bounds sit among light levels are
- * rewritten whole, with the range's bounds; in 1.7.10's range they do exactly what 1.7.10 does.
+ * The column holds every section of its world's range (spec §3). Sections 0..15 stay in 1.7.10's `storageArrays`, so
+ * code walking `getBlockStorageArray()` sees y 0..255 as before; the light store's other sections live in a second
+ * array. 1.7.10's `storageArrays[y >> 4]` reads go through the lookup by section number, and new sections outside 0..15
+ * are made before 1.7.10 would store them; y >> 4 and y & 15 are already right for negative y. The column scans whose
+ * bounds sit among light levels are rewritten whole, with the range's bounds; in 1.7.10's range they do exactly what
+ * 1.7.10 does.
  */
 @Mixin(Chunk.class)
 public abstract class MixinChunk implements TallChunk {

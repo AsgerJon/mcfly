@@ -14,11 +14,12 @@ import org.spongepowered.asm.mixin.injection.ModifyConstant;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 /**
- * Nether portals in the Overworld (§4 answer 5, decision 23). The search for an existing portal covers every height down
- * to the floor (1.7.10: to 0). A new portal's columns are searched down to the floor, from 4 below the top, so its frame
- * fits inside (1.7.10 starts at the top and builds frames cut off by it). The fallback stays 1.7.10's 70..height - 10,
- * which gives 70..310. The tests on y are picked by position among `makePortal`'s zero tests, by 1.7.10's bytecode:
- * its other zero tests are of the frame's offsets.
+ * Nether portals in the Overworld (spec §11 answer 5). Only heights change: the search's square, 128 blocks out, and
+ * its tie rule, the higher portal, stay 1.7.10's. The search for an existing portal covers every height down to the
+ * floor (1.7.10: to 0). A new portal's columns are searched down to the floor, from 4 below the top, so its frame fits
+ * inside (1.7.10 starts at the top and builds frames cut off by it). The fallback stays 1.7.10's 70..height - 10, which
+ * gives 70..310. The tests on y are picked by position among `makePortal`'s zero tests, by 1.7.10's bytecode: its other
+ * zero tests are of the frame's offsets.
  */
 @Mixin(Teleporter.class)
 public abstract class MixinTeleporter {

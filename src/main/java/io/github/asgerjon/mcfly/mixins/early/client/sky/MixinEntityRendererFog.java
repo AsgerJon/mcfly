@@ -16,10 +16,10 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 /**
- * The fog colour's darkening near the bottom of a tall world (§4 answer 8), measured from the floor. 1.7.10 multiplies
- * the colour by (camera y × the world type's factor)² while that is under 1: from y 32 down in a normal world, in the
- * last block in a flat one. Here it is (camera y − floor) × factor, and none while the camera is in lava. Blindness,
- * which 1.7.10 applies to the same number next, still darkens it.
+ * The fog colour's darkening near the bottom of a tall world (spec §11 answer 8), measured from the floor. 1.7.10
+ * multiplies the colour by (camera y × the world type's factor)² while that is under 1: from y 32 down in a normal
+ * world, in the last block in a flat one. Here it is (camera y − floor) × factor, and none while the camera is in lava.
+ * Blindness, which 1.7.10 applies to the same number next, still darkens it.
  */
 @Mixin(EntityRenderer.class)
 public abstract class MixinEntityRendererFog {

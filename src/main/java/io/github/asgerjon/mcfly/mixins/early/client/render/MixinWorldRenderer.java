@@ -18,11 +18,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import java.util.List;
 
 /**
- * Speed ((e) item 5, decision 36): a render section with no blocks of its own that draws nothing now stays as it is
- * when marked for redrawing: built, empty, never queued (`MixinRenderGlobal`). 1.7.10 queues it and rebuilds it to find
- * nothing, at two far ones a frame with those in view first; in a tall world most of a column is such sections, so the
- * ones with blocks waited behind them, and the queue each frame scans grew. What is drawn is the same: a rebuild draws
- * only the section's own blocks. And decision 38: a first build at its place waits for the chunks around its own.
+ * Speed: a render section with no blocks of its own that draws nothing now stays as it is when marked for redrawing:
+ * built, empty, never queued (`MixinRenderGlobal`). 1.7.10 queues it and rebuilds it to find nothing, at two far ones a
+ * frame with those in view first; in a tall world most of a column is such sections, so the ones with blocks waited
+ * behind them, and the queue each frame scans grew. What is drawn is the same: a rebuild draws only the section's own
+ * blocks. And a first build at its place waits for the chunks around its own.
  */
 @Mixin(WorldRenderer.class)
 public abstract class MixinWorldRenderer implements RenderSection {
@@ -51,7 +51,7 @@ public abstract class MixinWorldRenderer implements RenderSection {
 	@Shadow
 	public List<TileEntity> tileEntityRenderers;
 
-	/** The world time its first build began to wait, or -1 (decision 38). */
+	/** The world time its first build began to wait, or -1. */
 	@Unique
 	private long mcfly$waitingSince = -1L;
 

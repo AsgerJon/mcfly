@@ -12,8 +12,8 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 /**
  * An enderman's teleport looks straight down for a block to stand on, down to and including the floor block, also from
- * a start above the top; a start at or below the floor finds nothing (§4 answer 4). 1.7.10 looks down to 0, and wants
- * the start itself loaded, which nothing above the top is.
+ * a start above the top; a start at or below the floor finds nothing (spec §11 answer 4). 1.7.10 looks down to 0, and
+ * wants the start itself loaded, which nothing above the top is.
  */
 @Mixin(EntityEnderman.class)
 public abstract class MixinEntityEnderman {
