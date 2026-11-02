@@ -79,9 +79,8 @@ public class McFlyEarlyMixins implements IFMLLoadingPlugin, IEarlyMixinLoader {
 		mixins.add("rules.MixinBlockFluidFinite");
 		mixins.add("rules.MixinSpawnerAnimals");
 
-		// (e) client rendering: the whole column drawn, then the sky and fog near the floor. Temporary, for the bench's
-		// baseline (PLAN-mcfly.md (e)): MCFLY_BASELINE=1 leaves (e) out. Taken out once its numbers are in.
-		if (side == MixinEnvironment.Side.CLIENT && System.getenv("MCFLY_BASELINE") == null) {
+		// (e) client rendering: the whole column drawn, then the sky and fog near the floor
+		if (side == MixinEnvironment.Side.CLIENT) {
 			mixins.add("client.render.MixinRenderGlobal");
 			mixins.add("client.render.MixinWorldRenderer");
 			mixins.add("client.render.MixinChunkCacheLight");
